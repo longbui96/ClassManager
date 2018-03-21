@@ -30,6 +30,7 @@
         {
             this.dgvPH = new System.Windows.Forms.DataGridView();
             this.btnS = new System.Windows.Forms.Button();
+            this.btnQL = new System.Windows.Forms.Button();
             ((System.ComponentModel.ISupportInitialize)(this.dgvPH)).BeginInit();
             this.SuspendLayout();
             // 
@@ -53,11 +54,23 @@
             this.btnS.UseVisualStyleBackColor = true;
             this.btnS.Click += new System.EventHandler(this.btnS_Click);
             // 
+            // btnQL
+            // 
+            this.btnQL.Font = new System.Drawing.Font("Tahoma", 11.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(163)));
+            this.btnQL.Location = new System.Drawing.Point(640, 287);
+            this.btnQL.Name = "btnQL";
+            this.btnQL.Size = new System.Drawing.Size(95, 43);
+            this.btnQL.TabIndex = 18;
+            this.btnQL.Text = "Quay lại";
+            this.btnQL.UseVisualStyleBackColor = true;
+            this.btnQL.Click += new System.EventHandler(this.btnQL_Click);
+            // 
             // PhongHu
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(747, 342);
+            this.Controls.Add(this.btnQL);
             this.Controls.Add(this.btnS);
             this.Controls.Add(this.dgvPH);
             this.Name = "PhongHu";
@@ -73,5 +86,6 @@
 
         private System.Windows.Forms.DataGridView dgvPH;
         private System.Windows.Forms.Button btnS;
+        private System.Windows.Forms.Button btnQL;
     }
 }
