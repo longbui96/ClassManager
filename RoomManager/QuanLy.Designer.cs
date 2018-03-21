@@ -95,6 +95,7 @@
             // 
             // cbbLoai
             // 
+            this.cbbLoai.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
             this.cbbLoai.FormattingEnabled = true;
             this.cbbLoai.Location = new System.Drawing.Point(476, 283);
             this.cbbLoai.Name = "cbbLoai";
@@ -123,6 +124,7 @@
             // 
             // cbbChiTiet
             // 
+            this.cbbChiTiet.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
             this.cbbChiTiet.FormattingEnabled = true;
             this.cbbChiTiet.Location = new System.Drawing.Point(476, 307);
             this.cbbChiTiet.Name = "cbbChiTiet";

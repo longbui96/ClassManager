@@ -40,6 +40,7 @@
             this.txtTen = new System.Windows.Forms.TextBox();
             this.label2 = new System.Windows.Forms.Label();
             this.groupBox2 = new System.Windows.Forms.GroupBox();
+            this.btnTim = new System.Windows.Forms.Button();
             this.label7 = new System.Windows.Forms.Label();
             this.dateTimePicker1 = new System.Windows.Forms.DateTimePicker();
             this.label6 = new System.Windows.Forms.Label();
@@ -60,6 +61,7 @@
             // 
             // cbbPhong
             // 
+            this.cbbPhong.Enabled = false;
             this.cbbPhong.Font = new System.Drawing.Font("Tahoma", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.cbbPhong.FormattingEnabled = true;
             this.cbbPhong.Location = new System.Drawing.Point(65, 137);
@@ -67,7 +69,6 @@
             this.cbbPhong.Size = new System.Drawing.Size(134, 24);
             this.cbbPhong.TabIndex = 6;
             this.cbbPhong.Text = "P001";
-            this.cbbPhong.MouseEnter += new System.EventHandler(this.cbbPhong_MouseEnter);
             // 
             // label1
             // 
@@ -170,6 +171,7 @@
             // 
             // groupBox2
             // 
+            this.groupBox2.Controls.Add(this.btnTim);
             this.groupBox2.Controls.Add(this.label7);
             this.groupBox2.Controls.Add(this.dateTimePicker1);
             this.groupBox2.Controls.Add(this.label6);
@@ -184,6 +186,17 @@
             this.groupBox2.TabIndex = 6;
             this.groupBox2.TabStop = false;
             this.groupBox2.Text = "Thời gian";
+            // 
+            // btnTim
+            // 
+            this.btnTim.Font = new System.Drawing.Font("Tahoma", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnTim.Location = new System.Drawing.Point(155, 85);
+            this.btnTim.Name = "btnTim";
+            this.btnTim.Size = new System.Drawing.Size(115, 30);
+            this.btnTim.TabIndex = 13;
+            this.btnTim.Text = "Tìm phòng";
+            this.btnTim.UseVisualStyleBackColor = true;
+            this.btnTim.Click += new System.EventHandler(this.btnTim_Click);
             // 
             // label7
             // 
@@ -201,6 +214,7 @@
             this.dateTimePicker1.Name = "dateTimePicker1";
             this.dateTimePicker1.Size = new System.Drawing.Size(174, 23);
             this.dateTimePicker1.TabIndex = 11;
+            this.dateTimePicker1.ValueChanged += new System.EventHandler(this.dateTimePicker1_ValueChanged);
             // 
             // label6
             // 
@@ -237,6 +251,7 @@
             this.cbbLaplai.Size = new System.Drawing.Size(30, 24);
             this.cbbLaplai.TabIndex = 9;
             this.cbbLaplai.Text = "1";
+            this.cbbLaplai.SelectedIndexChanged += new System.EventHandler(this.cbbLaplai_SelectedIndexChanged);
             // 
             // cbbTietKT
             // 
@@ -246,6 +261,7 @@
             this.cbbTietKT.Size = new System.Drawing.Size(115, 24);
             this.cbbTietKT.TabIndex = 8;
             this.cbbTietKT.Text = "Tiết kết thúc";
+            this.cbbTietKT.SelectedIndexChanged += new System.EventHandler(this.cbbTietKT_SelectedIndexChanged);
             this.cbbTietKT.MouseEnter += new System.EventHandler(this.cbbTietKT_MouseEnter);
             // 
             // cbbTietBD
@@ -256,6 +272,7 @@
             this.cbbTietBD.Size = new System.Drawing.Size(114, 24);
             this.cbbTietBD.TabIndex = 7;
             this.cbbTietBD.Text = "Tiết bắt đầu";
+            this.cbbTietBD.SelectedIndexChanged += new System.EventHandler(this.cbbTietBD_SelectedIndexChanged);
             // 
             // txtLyDo
             // 
@@ -354,5 +371,6 @@
         private System.Windows.Forms.Label label6;
         private System.Windows.Forms.DateTimePicker dateTimePicker1;
         private System.Windows.Forms.Label label7;
+        private System.Windows.Forms.Button btnTim;
     }
 }

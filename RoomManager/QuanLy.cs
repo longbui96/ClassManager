@@ -7,6 +7,8 @@ using System.Linq;
 using System.Text;
 using System.Windows.Forms;
 using System.Data.SqlClient;
+using System.Configuration;
+using System.Globalization;
 
 namespace RoomManager
 {
@@ -72,18 +74,13 @@ namespace RoomManager
             }
         }
 
-        SqlConnection cn = new SqlConnection();
+        SqlConnection cn = new SqlConnection(ConfigurationManager.ConnectionStrings["cnStr"].ConnectionString);
         public QuanLy()
         {
             InitializeComponent();
             try
             {
-                string cnstr = "Server = .; Database = QLPH; Integrated Security = true;";
-                cn.ConnectionString = cnstr;
-                if (cn != null && cn.State == ConnectionState.Closed)
-                {
-                    cn.Open();  
-                }
+                cn.Open();
             }
             catch (SqlException)
             {
@@ -143,7 +140,10 @@ namespace RoomManager
                 TietKT = dr.GetInt32(3);
                 Ngay = dr.GetDateTime(4);
 
-                if (Ngay.Date == Convert.ToDateTime(dtpPT.Text))
+                // Cẩn thận với setting datetime của máy (dd-mm-yyyy hay mm-dd-yyy)
+
+                if (Ngay.Date == DateTime.ParseExact(dtpPT.Text, "mm/dd/yyyy", new CultureInfo("en-US")))
+                //if (Ngay.Date == Convert.ToDateTime(dtpPT.Text))
                 {
                     for (int i = TietBD; i <= TietKT; i++)
                     {
@@ -174,7 +174,9 @@ namespace RoomManager
                }
                tt = tt.TrimEnd(' ');
                tt = tt.TrimEnd(',');
-               PhongTrong room = new PhongTrong(TenP[i], tt, Convert.ToDateTime(dtpPT.Text));
+               
+                // Cẩn thận với setting datetime của máy (dd-mm-yyyy hay mm-dd-yyy)
+               PhongTrong room = new PhongTrong(TenP[i], tt, DateTime.ParseExact(dtpPT.Text,"mm/dd/yyyy", new CultureInfo("en-US")));
                list.Add(room);             
             }
             dgvTKB.DataSource = list;

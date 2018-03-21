@@ -7,6 +7,7 @@ using System.Linq;
 using System.Text;
 using System.Windows.Forms;
 using System.Data.SqlClient;
+using System.Configuration;
 
 namespace RoomManager
 {
@@ -30,10 +31,12 @@ namespace RoomManager
         }
         public void connect()
         {
-            string cntr = "Server = .; Database = QLPH; Integrated Security = true;";
-            cn = new SqlConnection(cntr);
+            //string cntr = "Server = .; Database = QLPH; Integrated Security = true;";
+            //cn = new SqlConnection(cntr);
             try
             {
+                cn = new SqlConnection(ConfigurationManager.ConnectionStrings["cnStr"].ConnectionString);
+
                 if (cn != null && cn.State == ConnectionState.Closed)
                     cn.Open();
             }
@@ -100,10 +103,7 @@ namespace RoomManager
             cbbPhong.ValueMember = "MaPhong";
             disconnect();
         }
-        private void cbbPhong_MouseEnter(object sender, EventArgs e)
-        {
-            PhongTrong();
-        }
+    
         private void button1_Click(object sender, EventArgs e)
         {
             connect();
@@ -154,5 +154,29 @@ namespace RoomManager
             Close();
         }
 
+        private void btnTim_Click(object sender, EventArgs e)
+        {
+            PhongTrong();
+            cbbPhong.Enabled = true;
+        }
+        private void cbbTietBD_SelectedIndexChanged(object sender, EventArgs e)
+        {
+            cbbPhong.Enabled = false;
+        }
+
+        private void cbbTietKT_SelectedIndexChanged(object sender, EventArgs e)
+        {
+            cbbPhong.Enabled = false;
+        }
+
+        private void dateTimePicker1_ValueChanged(object sender, EventArgs e)
+        {
+            cbbPhong.Enabled = false;
+        }
+
+        private void cbbLaplai_SelectedIndexChanged(object sender, EventArgs e)
+        {
+            cbbPhong.Enabled = false;
+        }
     }
 }

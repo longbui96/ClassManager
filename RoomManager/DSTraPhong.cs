@@ -7,6 +7,7 @@ using System.Linq;
 using System.Text;
 using System.Windows.Forms;
 using System.Data.SqlClient;
+using System.Configuration;
 
 namespace RoomManager
 {
@@ -60,12 +61,9 @@ namespace RoomManager
             InitializeComponent();
             try
             {
-                string cnstr = "Server = .; Database = QLPH; Integrated Security = true;";
-                cn.ConnectionString = cnstr;
-                if (cn != null && cn.State == ConnectionState.Closed)
-                {
-                    cn.Open();
-                }
+                SqlConnection cn = new SqlConnection(ConfigurationManager.ConnectionStrings["cnStr"].ConnectionString);
+
+                cn.Open();
             }
             catch (SqlException)
             {
