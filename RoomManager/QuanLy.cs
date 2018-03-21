@@ -37,10 +37,8 @@ namespace RoomManager
                     && Mon != "" 
                     && TietBD > 0 
                     && TietKT > TietBD 
-                    && NgayMuon > DateTime.Now 
                     && NguoiMuon != "" 
-                    && NguoiTra != "" 
-                    && LyDo != "")
+                    && NguoiTra != "")
                 {
                     this.Phong = Phong;
                     this.Lop = Lop;

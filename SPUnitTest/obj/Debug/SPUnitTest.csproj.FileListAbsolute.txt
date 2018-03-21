@@ -11,3 +11,14 @@ C:\Users\Octopus\Desktop\New folder\RoomManager\SPUnitTest\obj\Debug\SPUnitTest.
 C:\Users\Octopus\Desktop\New folder\RoomManager\SPUnitTest\obj\Debug\SPUnitTest.pdb
 C:\Users\Octopus\Desktop\New folder\RoomManager\SPUnitTest\obj\Debug\SPUnitTest.SqlServerUnitTest1.resources
 C:\Users\Octopus\Desktop\New folder\RoomManager\SPUnitTest\obj\Debug\SPUnitTest.csproj.GenerateResource.cache
+D:\OU\KiemThuPhanMem\RoomManager\SPUnitTest\bin\Debug\SPUnitTest.dll.config
+D:\OU\KiemThuPhanMem\RoomManager\SPUnitTest\bin\Debug\SPUnitTest.dll
+D:\OU\KiemThuPhanMem\RoomManager\SPUnitTest\bin\Debug\SPUnitTest.pdb
+D:\OU\KiemThuPhanMem\RoomManager\SPUnitTest\bin\Debug\Microsoft.VisualStudio.QualityTools.UnitTestFramework.dll
+D:\OU\KiemThuPhanMem\RoomManager\SPUnitTest\obj\Debug\SPUnitTest.csprojResolveAssemblyReference.cache
+D:\OU\KiemThuPhanMem\RoomManager\SPUnitTest\obj\Debug\SPUnitTest.SqlServerUnitTest1.resources
+D:\OU\KiemThuPhanMem\RoomManager\SPUnitTest\obj\Debug\SPUnitTest.csproj.GenerateResource.cache
+D:\OU\KiemThuPhanMem\RoomManager\SPUnitTest\obj\Debug\SPUnitTest.csproj.CoreCompileInputs.cache
+D:\OU\KiemThuPhanMem\RoomManager\SPUnitTest\obj\Debug\SPUnitTest.csproj.CopyComplete
+D:\OU\KiemThuPhanMem\RoomManager\SPUnitTest\obj\Debug\SPUnitTest.dll
+D:\OU\KiemThuPhanMem\RoomManager\SPUnitTest\obj\Debug\SPUnitTest.pdb
