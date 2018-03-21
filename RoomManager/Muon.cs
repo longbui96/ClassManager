@@ -64,10 +64,11 @@ namespace RoomManager
             ap = new SqlDataAdapter(cm);
             ds = new DataSet();
             ap.Fill(ds, "Tiet");
+            disconnect();
             cbbTietBD.DataSource = ds.Tables[0];
             cbbTietBD.DisplayMember = "TenTiet";
             cbbTietBD.ValueMember = "MaTiet";
-            disconnect();
+            cbbTietKT.Enabled = true;
         }
         public void Timekt()
         {
@@ -75,17 +76,13 @@ namespace RoomManager
             cm = new SqlCommand("select MaTiet, TenTiet From Tiet where MaTiet >" + cbbTietBD.SelectedValue.ToString().Trim() + " ", cn);
             SqlDataAdapter ap = new SqlDataAdapter(cm);
             DataSet dss = new DataSet();
-
             ap.Fill(dss, "Tiet");
             cbbTietKT.DataSource = dss.Tables[0];
             cbbTietKT.DisplayMember = "TenTiet";
             cbbTietKT.ValueMember = "MaTiet";
             disconnect();
         }
-        private void cbbTietKT_MouseEnter(object sender, EventArgs e)
-        {
-            Timekt();
-        }
+
         public void PhongTrong()
         {
             string bd = cbbTietBD.SelectedValue.ToString().Trim();
@@ -136,13 +133,14 @@ namespace RoomManager
                 
                 MessageBox.Show("Đăng kí thành công !");
                 button1.Enabled = false;
+                txtTen.Text = "";
+                txtMa.Text = "";
+                txtLyDo.Text = "";
+                radGV.Checked = true;
             }
             catch (Exception ex)
             {
                 MessageBox.Show(ex.Message);
-                
-
-               
             }
             finally
             {
@@ -160,25 +158,24 @@ namespace RoomManager
             PhongTrong();
             cbbPhong.Enabled = true;
             button1.Enabled = true;
+            groupBox1.Enabled = true;
+            groupBox3.Enabled = true;
         }
-        private void cbbTietBD_SelectedIndexChanged(object sender, EventArgs e)
+        private void thongTinMuonPhong_SelectedIndexChanged(object sender, EventArgs e)
         {
             cbbPhong.Enabled = false;
+            txtTen.Text = "";
+            txtMa.Text = "";
+            txtLyDo.Text = "";
+            radGV.Checked = true;
+            groupBox1.Enabled = false;
+            groupBox3.Enabled = false;
+            
         }
 
-        private void cbbTietKT_SelectedIndexChanged(object sender, EventArgs e)
+        private void cbbTietBD_SelectionChangeCommitted(object sender, EventArgs e)
         {
-            cbbPhong.Enabled = false;
-        }
-
-        private void dateTimePicker1_ValueChanged(object sender, EventArgs e)
-        {
-            cbbPhong.Enabled = false;
-        }
-
-        private void cbbLaplai_SelectedIndexChanged(object sender, EventArgs e)
-        {
-            cbbPhong.Enabled = false;
+            Timekt();
         }
     }
 }

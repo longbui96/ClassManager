@@ -86,6 +86,7 @@
             this.groupBox1.Controls.Add(this.panel1);
             this.groupBox1.Controls.Add(this.txtTen);
             this.groupBox1.Controls.Add(this.label2);
+            this.groupBox1.Enabled = false;
             this.groupBox1.Font = new System.Drawing.Font("Tahoma", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.groupBox1.Location = new System.Drawing.Point(12, 164);
             this.groupBox1.Name = "groupBox1";
@@ -214,7 +215,7 @@
             this.dateTimePicker1.Name = "dateTimePicker1";
             this.dateTimePicker1.Size = new System.Drawing.Size(174, 23);
             this.dateTimePicker1.TabIndex = 11;
-            this.dateTimePicker1.ValueChanged += new System.EventHandler(this.dateTimePicker1_ValueChanged);
+            this.dateTimePicker1.ValueChanged += new System.EventHandler(this.thongTinMuonPhong_SelectedIndexChanged);
             // 
             // label6
             // 
@@ -251,18 +252,18 @@
             this.cbbLaplai.Size = new System.Drawing.Size(30, 24);
             this.cbbLaplai.TabIndex = 9;
             this.cbbLaplai.Text = "1";
-            this.cbbLaplai.SelectedIndexChanged += new System.EventHandler(this.cbbLaplai_SelectedIndexChanged);
+            this.cbbLaplai.SelectedIndexChanged += new System.EventHandler(this.thongTinMuonPhong_SelectedIndexChanged);
             // 
             // cbbTietKT
             // 
+            this.cbbTietKT.Enabled = false;
             this.cbbTietKT.FormattingEnabled = true;
             this.cbbTietKT.Location = new System.Drawing.Point(155, 25);
             this.cbbTietKT.Name = "cbbTietKT";
             this.cbbTietKT.Size = new System.Drawing.Size(115, 24);
             this.cbbTietKT.TabIndex = 8;
             this.cbbTietKT.Text = "Tiết kết thúc";
-            this.cbbTietKT.SelectedIndexChanged += new System.EventHandler(this.cbbTietKT_SelectedIndexChanged);
-            this.cbbTietKT.MouseEnter += new System.EventHandler(this.cbbTietKT_MouseEnter);
+            this.cbbTietKT.SelectedIndexChanged += new System.EventHandler(this.thongTinMuonPhong_SelectedIndexChanged);
             // 
             // cbbTietBD
             // 
@@ -272,7 +273,8 @@
             this.cbbTietBD.Size = new System.Drawing.Size(114, 24);
             this.cbbTietBD.TabIndex = 7;
             this.cbbTietBD.Text = "Tiết bắt đầu";
-            this.cbbTietBD.SelectedIndexChanged += new System.EventHandler(this.cbbTietBD_SelectedIndexChanged);
+            this.cbbTietBD.SelectedIndexChanged += new System.EventHandler(this.thongTinMuonPhong_SelectedIndexChanged);
+            this.cbbTietBD.SelectionChangeCommitted += new System.EventHandler(this.cbbTietBD_SelectionChangeCommitted);
             // 
             // txtLyDo
             // 
@@ -285,6 +287,7 @@
             // groupBox3
             // 
             this.groupBox3.Controls.Add(this.txtLyDo);
+            this.groupBox3.Enabled = false;
             this.groupBox3.Font = new System.Drawing.Font("Tahoma", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.groupBox3.Location = new System.Drawing.Point(12, 303);
             this.groupBox3.Name = "groupBox3";

@@ -1,0 +1,17 @@
+D:\OU\KiemThuPhanMem\RoomManager\QuanLy\bin\Debug\Microsoft.VisualStudio.TestPlatform.MSTest.TestAdapter.dll
+D:\OU\KiemThuPhanMem\RoomManager\QuanLy\bin\Debug\Microsoft.VisualStudio.TestPlatform.MSTestAdapter.PlatformServices.Interface.dll
+D:\OU\KiemThuPhanMem\RoomManager\QuanLy\bin\Debug\Microsoft.VisualStudio.TestPlatform.MSTestAdapter.PlatformServices.dll
+D:\OU\KiemThuPhanMem\RoomManager\QuanLy\bin\Debug\QuanLy.dll
+D:\OU\KiemThuPhanMem\RoomManager\QuanLy\bin\Debug\QuanLy.pdb
+D:\OU\KiemThuPhanMem\RoomManager\QuanLy\bin\Debug\Microsoft.VisualStudio.TestPlatform.TestFramework.dll
+D:\OU\KiemThuPhanMem\RoomManager\QuanLy\bin\Debug\Microsoft.VisualStudio.TestPlatform.TestFramework.Extensions.dll
+D:\OU\KiemThuPhanMem\RoomManager\QuanLy\bin\Debug\RoomManager.exe
+D:\OU\KiemThuPhanMem\RoomManager\QuanLy\bin\Debug\RoomManager.pdb
+D:\OU\KiemThuPhanMem\RoomManager\QuanLy\bin\Debug\RoomManager.exe.config
+D:\OU\KiemThuPhanMem\RoomManager\QuanLy\bin\Debug\Microsoft.VisualStudio.TestPlatform.TestFramework.xml
+D:\OU\KiemThuPhanMem\RoomManager\QuanLy\bin\Debug\Microsoft.VisualStudio.TestPlatform.TestFramework.Extensions.xml
+D:\OU\KiemThuPhanMem\RoomManager\QuanLy\obj\Debug\QuanLy.csprojResolveAssemblyReference.cache
+D:\OU\KiemThuPhanMem\RoomManager\QuanLy\obj\Debug\QuanLy.csproj.CoreCompileInputs.cache
+D:\OU\KiemThuPhanMem\RoomManager\QuanLy\obj\Debug\QuanLy.csproj.CopyComplete
+D:\OU\KiemThuPhanMem\RoomManager\QuanLy\obj\Debug\QuanLy.dll
+D:\OU\KiemThuPhanMem\RoomManager\QuanLy\obj\Debug\QuanLy.pdb
