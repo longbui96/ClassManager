@@ -14,6 +14,8 @@ namespace RoomManager
 {
     public partial class QuanLy : Form
     {
+        SqlConnection cn = new SqlConnection(ConfigurationManager.ConnectionStrings["cnStr"].ConnectionString);
+
         public class TKB 
         {
             //
@@ -30,17 +32,33 @@ namespace RoomManager
             //
             public TKB(string Phong, string Lop, string Mon, int TietBD, int TietKT, DateTime NgayMuon, string NguoiMuon, string NguoiTra, string LyDo)
             {
-                this.Phong = Phong;
-                this.Lop = Lop;
-                this.Mon = Mon;
-                this.TietBD = TietBD;
-                this.TietKT = TietKT;
-                this.NgayMuon = NgayMuon;
-                this.NguoiMuon = NguoiMuon;
-                this.NguoiTra = NguoiTra;
-                this.LyDo = LyDo;
+                if (Phong != "" 
+                    && Lop != "" 
+                    && Mon != "" 
+                    && TietBD > 0 
+                    && TietKT > TietBD 
+                    && NgayMuon > DateTime.Now 
+                    && NguoiMuon != "" 
+                    && NguoiTra != "" 
+                    && LyDo != "")
+                {
+                    this.Phong = Phong;
+                    this.Lop = Lop;
+                    this.Mon = Mon;
+                    this.TietBD = TietBD;
+                    this.TietKT = TietKT;
+                    this.NgayMuon = NgayMuon;
+                    this.NguoiMuon = NguoiMuon;
+                    this.NguoiTra = NguoiTra;
+                    this.LyDo = LyDo;
+                }
+                else
+                {
+                    throw new Exception("Gặp lỗi trong việc khởi tạo đối tượng TKB");
+                }
             }
         }
+
         public class PhongTrong
         {
             //
@@ -51,11 +69,19 @@ namespace RoomManager
             //
             public PhongTrong(string IDPhong, string TietTrong, DateTime NgayMuon)
             {
-                this.TenPhong = IDPhong;
-                this.TietTrong = TietTrong;
-                this.Ngay = NgayMuon;
+                if (IDPhong != "" && TietTrong != "" && NgayMuon is DateTime)
+                {
+                    this.TenPhong = IDPhong;
+                    this.TietTrong = TietTrong;
+                    this.Ngay = NgayMuon;
+                }
+                else
+                {
+                    throw new Exception("Không được để trống");
+                }
             }
         }
+
         public class cbbItem
         {
             //
@@ -69,12 +95,18 @@ namespace RoomManager
             //}
             public cbbItem(string t, object v)
             {
-                this.Text = t;
-                this.Value = v;
+                if (t != "" && v != (object)"")
+                {
+                    this.Text = t;
+                    this.Value = v;
+                }
+                else
+                {
+                    throw new Exception("Không thể trống");
+                }
             }
         }
 
-        SqlConnection cn = new SqlConnection(ConfigurationManager.ConnectionStrings["cnStr"].ConnectionString);
         public QuanLy()
         {
             InitializeComponent();
@@ -82,9 +114,10 @@ namespace RoomManager
             {
                 cn.Open();
             }
-            catch (SqlException)
+            catch (SqlException ex)
             {
-                MessageBox.Show("Loi ket noi !!", "Thong bao", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                throw new Exception("Lỗi kết nối");
+                //MessageBox.Show("Loi ket noi !!", "Thong bao", MessageBoxButtons.OK, MessageBoxIcon.Information);
             }
             finally
             {
@@ -95,7 +128,31 @@ namespace RoomManager
         private void btnAll_Click(object sender, EventArgs e)
         {
             cn.Open();
-            string sql = "select P.TenPhong, LH.TenLop, M.TenMon, TKB.TietBD, TKB.TietKT, TKB.Ngay, MP.TenNgMuon, TP.TenNgTra , MP.Note from TKBieu TKB, MuonPhong MP, TraPhong TP, Phong P, LopHoc LH,Mon M where  TKB.MaMP like MP.MaMP and TKB.MaTP like TP.MaTP and TKB.MaPhong like P.MaPhong and TKB.MaLH like LH.MaLH and LH.MaMon like M.MaMon";
+
+            string sql = "SELECT " +
+                            "P.TenPhong, " +
+                            "LH.TenLop, " +
+                            "M.TenMon, " +
+                            "TKB.TietBD, " +
+                            "TKB.TietKT, " +
+                            "TKB.Ngay, " +
+                            "MP.TenNgMuon, " +
+                            "TP.TenNgTra, " +
+                            "MP.Note " +
+                        "FROM " +
+                            "TKBieu TKB, " +
+                            "MuonPhong MP, " +
+                            "TraPhong TP, " +
+                            "Phong P, " +
+                            "LopHoc LH," +
+                            "Mon M " +
+                        "WHERE " +
+                            "TKB.MaMP LIKE MP.MaMP " +
+                            "AND TKB.MaTP LIKE TP.MaTP " +
+                            "AND TKB.MaPhong LIKE P.MaPhong " +
+                            "AND TKB.MaLH LIKE LH.MaLH " +
+                            "AND LH.MaMon LIKE M.MaMon";
+
             List<TKB> list = new List<TKB>();
             SqlCommand cmd = new SqlCommand(sql, cn);
             SqlDataReader dr = cmd.ExecuteReader();
@@ -177,7 +234,7 @@ namespace RoomManager
                
                 // Cẩn thận với setting datetime của máy (dd-mm-yyyy hay mm-dd-yyy)
                PhongTrong room = new PhongTrong(TenP[i], tt, NgayDuocChon);
-               list.Add(room);             
+               list.Add(room);
             }
             dgvTKB.DataSource = list;
             cn.Close();
@@ -187,10 +244,14 @@ namespace RoomManager
         private void cbbLoai_SelectedIndexChanged(object sender, EventArgs e)
         {
             string sql = "";
+
             if (cn != null && cn.State == ConnectionState.Closed)
                 cn.Open();
+            else throw new Exception("Error when open connection");
+
             cbbItem cbb = (cbbItem)cbbLoai.SelectedItem;
             string value = cbb.Value.ToString();
+
             switch (value)
             {
                 case "MaMon":
@@ -219,10 +280,12 @@ namespace RoomManager
             SqlCommand cmd = new SqlCommand(sql, cn);
             SqlDataAdapter ad = new SqlDataAdapter(cmd);
             DataSet ds = new DataSet();
+
             ad.Fill(ds);
             cbbChiTiet.DataSource = ds.Tables[0];
             cbbChiTiet.DisplayMember = newDisp;
             cbbChiTiet.ValueMember = newValue;
+
             cn.Close();
         }
 
@@ -249,24 +312,51 @@ namespace RoomManager
             string Ma = dsCT.Rows[cbbChiTiet.SelectedIndex][0].ToString();
             cbbItem cbbL = (cbbItem)cbbLoai.SelectedItem;
             string Loai = cbbL.Value.ToString();
+
+            sql =   "SELECT P.TenPhong, " +
+                        "LH.TenLop, " +
+                        "M.TenMon, " +
+                        "TKB.TietBD, " +
+                        "TKB.TietKT, " +
+                        "TKB.Ngay, " +
+                        "MP.TenNgMuon, " +
+                        "TP.TenNgTra, " +
+                        "MP.Note " +
+                    "FROM " +
+                        "TKBieu TKB, " +
+                        "MuonPhong MP, " +
+                        "TraPhong TP, " +
+                        "Phong P, " +
+                        "LopHoc LH, " +
+                        "Mon M " +
+                    "WHERE " +
+                        "TKB.MaMP LIKE MP.MaMP " +
+                        "AND TKB.MaTP LIKE TP.MaTP " +
+                        "AND TKB.MaPhong LIKE P.MaPhong " +
+                        "AND TKB.MaLH LIKE LH.MaLH " +
+                        "AND LH.MaMon LIKE M.MaMon ";
+
             if (Loai == "MaMon")
             {
-                sql = "select P.TenPhong, LH.TenLop, M.TenMon, TKB.TietBD, TKB.TietKT, TKB.Ngay, MP.TenNgMuon, TP.TenNgTra, MP.Note from TKBieu TKB, MuonPhong MP, TraPhong TP, Phong P, LopHoc LH, Mon M where  TKB.MaMP like MP.MaMP and TKB.MaTP like TP.MaTP and TKB.MaPhong like P.MaPhong and TKB.MaLH like LH.MaLH and LH.MaMon like M.MaMon and M.MaMon like " + Ma;
+                sql += "AND M.MaMon LIKE " + Ma;
             }
             if (Loai == "MaPhong")
             {
-                sql = "select P.TenPhong, LH.TenLop, M.TenMon, TKB.TietBD, TKB.TietKT, TKB.Ngay, MP.TenNgMuon, TP.TenNgTra , MP.Note from TKBieu TKB, MuonPhong MP, TraPhong TP, Phong P, LopHoc LH, Mon M where  TKB.MaMP like MP.MaMP and TKB.MaTP like TP.MaTP and TKB.MaPhong like P.MaPhong and TKB.MaLH like LH.MaLH and LH.MaMon like M.MaMon and TKB.MaPhong like " + Ma;
+                sql += "AND TKB.MaPhong LIKE " + Ma;
             }
             if (Loai == "MaGV")
             {
-                sql = "select P.TenPhong, LH.TenLop, M.TenMon, TKB.TietBD, TKB.TietKT, TKB.Ngay, MP.TenNgMuon, TP.TenNgTra , MP.Note from TKBieu TKB, MuonPhong MP, TraPhong TP, Phong P, LopHoc LH, Mon M where  TKB.MaMP like MP.MaMP and TKB.MaTP like TP.MaTP and TKB.MaPhong like P.MaPhong and TKB.MaLH like LH.MaLH and LH.MaMon like M.MaMon and LH.MaGV like " + Ma;
+                sql += "AND LH.MaGV LIKE " + Ma;
             }
+
             List<TKB> list = new List<TKB>();
             SqlCommand cmd = new SqlCommand(sql, cn);
             SqlDataReader dr = cmd.ExecuteReader();
+
             int  TietBD, TietKT; 
             DateTime NgayMuon;
             string NguoiMuon, NguoiTra, LyDo, Phong, Lop, Mon;
+
             while (dr.Read())
             {
                 Phong = dr.GetString(0);
@@ -281,8 +371,10 @@ namespace RoomManager
                 TKB tkbieu = new TKB(Phong, Lop, Mon, TietBD, TietKT, NgayMuon, NguoiMuon, NguoiTra, LyDo);
                 list.Add(tkbieu);
             }
+
             dr.Close();
             dgvTKB.DataSource = list;
+
             cn.Close();
         }
 
@@ -290,7 +382,5 @@ namespace RoomManager
         {
             this.Close();
         }
-        
-  
     }
 }
