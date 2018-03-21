@@ -152,12 +152,17 @@ namespace RoomManager
 
         private void btnTra_Click(object sender, EventArgs e)
         {
-            GIDPhong = Convert.ToInt32(dgvTKB.Rows[rNum].Cells[0].Value.ToString());
-            GTietBD = Convert.ToInt32(dgvTKB.Rows[rNum].Cells[4].Value.ToString());
-            GTietKT = Convert.ToInt32(dgvTKB.Rows[rNum].Cells[5].Value.ToString());
-            GNgay = Convert.ToDateTime(dgvTKB.Rows[rNum].Cells[6].Value);
-            Tra Tra = new Tra(this);
-            Tra.ShowDialog();
+            if (rNum == -1)
+                MessageBox.Show("Chưa chọn phòng!!");
+            else
+            {
+                GIDPhong = Convert.ToInt32(dgvTKB.Rows[rNum].Cells[0].Value.ToString());
+                GTietBD = Convert.ToInt32(dgvTKB.Rows[rNum].Cells[4].Value.ToString());
+                GTietKT = Convert.ToInt32(dgvTKB.Rows[rNum].Cells[5].Value.ToString());
+                GNgay = Convert.ToDateTime(dgvTKB.Rows[rNum].Cells[6].Value);
+                Tra Tra = new Tra(this);
+                Tra.ShowDialog();
+            }
         }
 
         private void btnQL_Click(object sender, EventArgs e)
