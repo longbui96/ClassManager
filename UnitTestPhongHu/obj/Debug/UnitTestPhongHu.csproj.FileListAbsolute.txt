@@ -1,0 +1,17 @@
+D:\OU\KiemThuPhanMem\RoomManager\UnitTestPhongHu\bin\Debug\Microsoft.VisualStudio.TestPlatform.MSTest.TestAdapter.dll
+D:\OU\KiemThuPhanMem\RoomManager\UnitTestPhongHu\bin\Debug\Microsoft.VisualStudio.TestPlatform.MSTestAdapter.PlatformServices.Interface.dll
+D:\OU\KiemThuPhanMem\RoomManager\UnitTestPhongHu\bin\Debug\Microsoft.VisualStudio.TestPlatform.MSTestAdapter.PlatformServices.dll
+D:\OU\KiemThuPhanMem\RoomManager\UnitTestPhongHu\bin\Debug\UnitTestPhongHu.dll
+D:\OU\KiemThuPhanMem\RoomManager\UnitTestPhongHu\bin\Debug\UnitTestPhongHu.pdb
+D:\OU\KiemThuPhanMem\RoomManager\UnitTestPhongHu\bin\Debug\Microsoft.VisualStudio.TestPlatform.TestFramework.dll
+D:\OU\KiemThuPhanMem\RoomManager\UnitTestPhongHu\bin\Debug\Microsoft.VisualStudio.TestPlatform.TestFramework.Extensions.dll
+D:\OU\KiemThuPhanMem\RoomManager\UnitTestPhongHu\bin\Debug\RoomManager.exe
+D:\OU\KiemThuPhanMem\RoomManager\UnitTestPhongHu\bin\Debug\RoomManager.pdb
+D:\OU\KiemThuPhanMem\RoomManager\UnitTestPhongHu\bin\Debug\RoomManager.exe.config
+D:\OU\KiemThuPhanMem\RoomManager\UnitTestPhongHu\bin\Debug\Microsoft.VisualStudio.TestPlatform.TestFramework.xml
+D:\OU\KiemThuPhanMem\RoomManager\UnitTestPhongHu\bin\Debug\Microsoft.VisualStudio.TestPlatform.TestFramework.Extensions.xml
+D:\OU\KiemThuPhanMem\RoomManager\UnitTestPhongHu\obj\Debug\UnitTestPhongHu.csprojResolveAssemblyReference.cache
+D:\OU\KiemThuPhanMem\RoomManager\UnitTestPhongHu\obj\Debug\UnitTestPhongHu.csproj.CoreCompileInputs.cache
+D:\OU\KiemThuPhanMem\RoomManager\UnitTestPhongHu\obj\Debug\UnitTestPhongHu.csproj.CopyComplete
+D:\OU\KiemThuPhanMem\RoomManager\UnitTestPhongHu\obj\Debug\UnitTestPhongHu.dll
+D:\OU\KiemThuPhanMem\RoomManager\UnitTestPhongHu\obj\Debug\UnitTestPhongHu.pdb
