@@ -1,0 +1,5 @@
+C:\Users\Octopus\Desktop\New folder\RoomManager\Test SQL\bin\Debug\Test SQL.dacpac
+C:\Users\Octopus\Desktop\New folder\RoomManager\Test SQL\bin\Debug\Test_SQL.dll
+C:\Users\Octopus\Desktop\New folder\RoomManager\Test SQL\bin\Debug\Test_SQL.pdb
+C:\Users\Octopus\Desktop\New folder\RoomManager\Test SQL\obj\Debug\Test_SQL.dll
+C:\Users\Octopus\Desktop\New folder\RoomManager\Test SQL\obj\Debug\Test_SQL.pdb
