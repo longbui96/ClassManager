@@ -34,19 +34,18 @@ namespace RoomManager
                 this.SucChua = sc;
             }
         }
-        SqlConnection cn = new SqlConnection();
+        SqlConnection cn = new SqlConnection(ConfigurationManager.ConnectionStrings["cnStr"].ConnectionString);
         public PhongHu()
         {
             InitializeComponent();
             try
             {
-                SqlConnection cn = new SqlConnection(ConfigurationManager.ConnectionStrings["cnStr"].ConnectionString);
                 //string cnstr = "Server = .; Database = QLPH; Integrated Security = true;";
                 //cn.ConnectionString = cnstr;
-                //if (cn != null && cn.State == ConnectionState.Closed)
-                //{
-                cn.Open();
-                //}
+                if (cn != null && cn.State == ConnectionState.Closed)
+                {
+                    cn.Open();
+                }
             }
             catch (SqlException)
             {

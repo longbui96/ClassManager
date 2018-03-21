@@ -176,7 +176,7 @@ namespace RoomManager
                tt = tt.TrimEnd(',');
                
                 // Cẩn thận với setting datetime của máy (dd-mm-yyyy hay mm-dd-yyy)
-               PhongTrong room = new PhongTrong(TenP[i], tt, DateTime.ParseExact(dtpPT.Text,"mm/dd/yyyy", new CultureInfo("en-US")));
+               PhongTrong room = new PhongTrong(TenP[i], tt, NgayDuocChon);
                list.Add(room);             
             }
             dgvTKB.DataSource = list;
