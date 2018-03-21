@@ -60,6 +60,7 @@
             this.ClientSize = new System.Drawing.Size(747, 342);
             this.Controls.Add(this.btnS);
             this.Controls.Add(this.dgvPH);
+            this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedSingle;
             this.Name = "PhongHu";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "Phòng hư";

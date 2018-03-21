@@ -133,6 +133,7 @@
             this.Controls.Add(this.label1);
             this.Controls.Add(this.dtpPT);
             this.Controls.Add(this.dgvTKB);
+            this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedSingle;
             this.Name = "DSTraPhong";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "DSTraPhong";

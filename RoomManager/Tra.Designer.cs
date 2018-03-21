@@ -584,6 +584,7 @@
             this.Controls.Add(this.label7);
             this.Controls.Add(this.splitContainer1);
             this.Controls.Add(this.label1);
+            this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedSingle;
             this.Name = "Tra";
             this.Text = "Trả phòng";
             this.FormClosing += new System.Windows.Forms.FormClosingEventHandler(this.Tra_FormClosing);

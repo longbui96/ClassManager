@@ -145,6 +145,7 @@
             this.Controls.Add(this.btnTK);
             this.Controls.Add(this.btnAll);
             this.Controls.Add(this.dgvTKB);
+            this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedSingle;
             this.Name = "QuanLy";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "Quản lý phòng";
