@@ -103,5 +103,10 @@ namespace RoomManager
         {
             this.Close();
         }
+
+        private void btnQL_Click(object sender, EventArgs e)
+        {
+            Close();
+        }
     }
 }
