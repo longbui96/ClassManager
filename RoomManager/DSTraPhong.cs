@@ -8,6 +8,7 @@ using System.Text;
 using System.Windows.Forms;
 using System.Data.SqlClient;
 using System.Configuration;
+using System.Globalization;
 
 namespace RoomManager
 {
@@ -61,7 +62,7 @@ namespace RoomManager
             InitializeComponent();
             try
             {
-                SqlConnection cn = new SqlConnection(ConfigurationManager.ConnectionStrings["cnStr"].ConnectionString);
+                cn = new SqlConnection(ConfigurationManager.ConnectionStrings["cnStr"].ConnectionString);
 
                 cn.Open();
             }
@@ -112,6 +113,7 @@ namespace RoomManager
             SqlCommand cmd = new SqlCommand(sql, cn);
             SqlDataReader dr = cmd.ExecuteReader();
             int TietBD, TietKT, IDPhong;
+            DateTime NgayDuocChon = DateTime.ParseExact(dtpPT.Text,"dd/MM/yyyy", new CultureInfo("en-US"));
             DateTime NgayMuon;
             string NguoiMuon, NguoiTra, LyDo, Mon, Phong, Lop;
             while (dr.Read())
@@ -126,7 +128,7 @@ namespace RoomManager
                 NguoiMuon = dr.GetString(7);
                 NguoiTra = dr.GetString(8);
                 LyDo = dr.GetString(9);
-                if (NgayMuon.Date == Convert.ToDateTime(dtpPT.Text))
+                if (NgayMuon.Date == NgayDuocChon)
                 {
                     TKB tkbieu = new TKB(IDPhong, Phong, Lop, Mon, TietBD, TietKT, NgayMuon, NguoiMuon, NguoiTra, LyDo);
                     list.Add(tkbieu);

@@ -133,6 +133,7 @@ namespace RoomManager
             DateTime Ngay;
             int[,] tiet = new int[10, 14];
             string[] TenP = new string[10];
+            DateTime NgayDuocChon = DateTime.ParseExact(dtpPT.Text, "dd/MM/yyyy", new CultureInfo("en-US"));
             while (dr.Read())
             {
                 IDPhong = dr.GetInt32(0);
@@ -141,8 +142,7 @@ namespace RoomManager
                 Ngay = dr.GetDateTime(4);
 
                 // Cẩn thận với setting datetime của máy (dd-mm-yyyy hay mm-dd-yyy)
-
-                if (Ngay.Date == DateTime.ParseExact(dtpPT.Text, "mm/dd/yyyy", new CultureInfo("en-US")))
+                if (Ngay.Date == NgayDuocChon)
                 //if (Ngay.Date == Convert.ToDateTime(dtpPT.Text))
                 {
                     for (int i = TietBD; i <= TietKT; i++)
@@ -176,7 +176,7 @@ namespace RoomManager
                tt = tt.TrimEnd(',');
                
                 // Cẩn thận với setting datetime của máy (dd-mm-yyyy hay mm-dd-yyy)
-               PhongTrong room = new PhongTrong(TenP[i], tt, DateTime.ParseExact(dtpPT.Text,"mm/dd/yyyy", new CultureInfo("en-US")));
+               PhongTrong room = new PhongTrong(TenP[i], tt, NgayDuocChon);
                list.Add(room);             
             }
             dgvTKB.DataSource = list;
