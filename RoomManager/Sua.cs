@@ -26,7 +26,7 @@ namespace RoomManager
             }
         }
         PhongHu FPhongHu;
-        SqlConnection cn = new SqlConnection();
+        SqlConnection cn = new SqlConnection(ConfigurationManager.ConnectionStrings["cnStr"].ConnectionString);
         public Sua(PhongHu f)
         {
             FPhongHu = f;
@@ -35,7 +35,6 @@ namespace RoomManager
             {
                 //string cnstr = "Server = .; Database = QLPH; Integrated Security = true;";
                 //cn.ConnectionString = cnstr;
-                SqlConnection cn = new SqlConnection(ConfigurationManager.ConnectionStrings["cnStr"].ConnectionString);
 
                 if (cn != null && cn.State == ConnectionState.Closed)
                 {
@@ -108,24 +107,24 @@ namespace RoomManager
             string value = cbb.Value.ToString();
             if (value != "")
             {
-                string sql1 = "select * from Phong where MaPhong like " + value;
+                string sql2 = "SELECT * FROM Phong WHERE MaPhong LIKE '%" + value + "'";
                 bool mc, at, asang, ml, rdc;
-                SqlCommand cmd1 = new SqlCommand(sql1, cn);
-                SqlDataReader dr1 = cmd1.ExecuteReader();
-                while (dr1.Read())
+                SqlCommand cmd2 = new SqlCommand(sql2, cn);
+                SqlDataReader dr2 = cmd2.ExecuteReader();
+                while (dr2.Read())
                 {
-                    mc = dr1.GetBoolean(2);
-                    at = dr1.GetBoolean(3);
-                    asang = dr1.GetBoolean(4);
-                    ml = dr1.GetBoolean(5);
-                    rdc = dr1.GetBoolean(6);
+                    mc = dr2.GetBoolean(2);
+                    at = dr2.GetBoolean(3);
+                    asang = dr2.GetBoolean(4);
+                    ml = dr2.GetBoolean(5);
+                    rdc = dr2.GetBoolean(6);
                     if (mc == true) { radMCTot.Checked = true; radMCHong.Checked = false; } else { radMCTot.Checked = false; radMCHong.Checked = true; }
                     if (at == true) { radATTot.Checked = true; radATHong.Checked = false; } else { radATTot.Checked = false; radATHong.Checked = true; }
                     if (asang == true) { radASTot.Checked = true; radASHong.Checked = false; } else { radASTot.Checked = false; radASHong.Checked = true; }
                     if (ml == true) { radMLTot.Checked = true; radMLHong.Checked = false; } else { radMLTot.Checked = false; radMLHong.Checked = true; }
                     if (rdc == true) { radRDCTot.Checked = true; radRDCHong.Checked = false; } else { radRDCTot.Checked = false; radRDCHong.Checked = true; }
                 }
-                dr1.Close();
+                dr2.Close();
             }
             cn.Close();
         }

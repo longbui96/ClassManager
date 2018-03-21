@@ -470,6 +470,7 @@
             this.cbbPhong.Name = "cbbPhong";
             this.cbbPhong.Size = new System.Drawing.Size(121, 24);
             this.cbbPhong.TabIndex = 13;
+            this.cbbPhong.Text = "1";
             this.cbbPhong.SelectedIndexChanged += new System.EventHandler(this.cbbPhong_SelectedIndexChanged);
             // 
             // Sua
