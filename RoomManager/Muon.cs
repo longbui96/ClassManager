@@ -135,6 +135,7 @@ namespace RoomManager
                 cmd.ExecuteNonQuery();
                 
                 MessageBox.Show("Đăng kí thành công !");
+                button1.Enabled = false;
             }
             catch (Exception ex)
             {
@@ -158,6 +159,7 @@ namespace RoomManager
         {
             PhongTrong();
             cbbPhong.Enabled = true;
+            button1.Enabled = true;
         }
         private void cbbTietBD_SelectedIndexChanged(object sender, EventArgs e)
         {

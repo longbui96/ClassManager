@@ -13,7 +13,7 @@ namespace RoomManager
 {
     public partial class Tra : Form
     {
-        SqlConnection cn = new SqlConnection();
+        SqlConnection cn = new SqlConnection(ConfigurationManager.ConnectionStrings["cnStr"].ConnectionString);
         DSTraPhong DSTP;
         public Tra(DSTraPhong temp)
         {
@@ -21,8 +21,6 @@ namespace RoomManager
             DSTP = temp;
             try
             {
-                SqlConnection cn = new SqlConnection(ConfigurationManager.ConnectionStrings["cnStr"].ConnectionString);
-
                 if (cn != null && cn.State == ConnectionState.Closed)
                 {
                     cn.Open();
