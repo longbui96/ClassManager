@@ -66,10 +66,12 @@ namespace RoomManager
                 cbbItem item = new cbbItem(name, v);
                 list.Add(item);
             }
+            dr.Close();
             cbbPhong.DataSource = list;
             cbbPhong.DisplayMember = "Text";
             cbbPhong.ValueMember = "Value";
-            dr.Close();
+            cbbPhong.Enabled = true;
+            
 
             ////////////////////////////////////////////////////////
 
@@ -77,6 +79,8 @@ namespace RoomManager
             string value = cbb.Value.ToString();
             if (value != "")
             {
+                if (cn != null && cn.State == ConnectionState.Closed)
+                    cn.Open();
                 string sql1 = "select * from Phong where MaPhong like " + value;
                 bool mc, at, asang, ml, rdc;
                 SqlCommand cmd1 = new SqlCommand(sql1, cn);

@@ -464,6 +464,7 @@
             // 
             // cbbPhong
             // 
+            this.cbbPhong.Enabled = false;
             this.cbbPhong.Font = new System.Drawing.Font("Tahoma", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.cbbPhong.FormattingEnabled = true;
             this.cbbPhong.Location = new System.Drawing.Point(81, 44);
