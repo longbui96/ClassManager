@@ -130,8 +130,11 @@ namespace RoomManager
                 LyDo = dr.GetString(9);
                 if (NgayMuon.Date == NgayDuocChon)
                 {
-                    TKB tkbieu = new TKB(IDPhong, Phong, Lop, Mon, TietBD, TietKT, NgayMuon, NguoiMuon, NguoiTra, LyDo);
-                    list.Add(tkbieu);
+                    if (NguoiTra == "Chưa trả")
+                    {
+                        TKB tkbieu = new TKB(IDPhong, Phong, Lop, Mon, TietBD, TietKT, NgayMuon, NguoiMuon, NguoiTra, LyDo);
+                        list.Add(tkbieu);
+                    }
                 }
             }
             dr.Close();
