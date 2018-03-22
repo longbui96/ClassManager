@@ -22,3 +22,15 @@ D:\OU\KiemThuPhanMem\RoomManager\SPUnitTest\obj\Debug\SPUnitTest.csproj.CoreComp
 D:\OU\KiemThuPhanMem\RoomManager\SPUnitTest\obj\Debug\SPUnitTest.csproj.CopyComplete
 D:\OU\KiemThuPhanMem\RoomManager\SPUnitTest\obj\Debug\SPUnitTest.dll
 D:\OU\KiemThuPhanMem\RoomManager\SPUnitTest\obj\Debug\SPUnitTest.pdb
+C:\Users\Octopus\Desktop\New folder (3)\RoomManager\SPUnitTest\bin\Debug\SPUnitTest.dll.config
+C:\Users\Octopus\Desktop\New folder (3)\RoomManager\SPUnitTest\bin\Debug\SPUnitTest.dll
+C:\Users\Octopus\Desktop\New folder (3)\RoomManager\SPUnitTest\bin\Debug\SPUnitTest.pdb
+C:\Users\Octopus\Desktop\New folder (3)\RoomManager\SPUnitTest\bin\Debug\Microsoft.Data.Tools.Schema.Sql.UnitTesting.dll
+C:\Users\Octopus\Desktop\New folder (3)\RoomManager\SPUnitTest\bin\Debug\Microsoft.Data.Tools.Schema.Sql.UnitTestingAdapter.dll
+C:\Users\Octopus\Desktop\New folder (3)\RoomManager\SPUnitTest\bin\Debug\Microsoft.VisualStudio.QualityTools.UnitTestFramework.dll
+C:\Users\Octopus\Desktop\New folder (3)\RoomManager\SPUnitTest\obj\Debug\SPUnitTest.SqlServerUnitTest1.resources
+C:\Users\Octopus\Desktop\New folder (3)\RoomManager\SPUnitTest\obj\Debug\SPUnitTest.csproj.GenerateResource.cache
+C:\Users\Octopus\Desktop\New folder (3)\RoomManager\SPUnitTest\obj\Debug\SPUnitTest.csproj.CoreCompileInputs.cache
+C:\Users\Octopus\Desktop\New folder (3)\RoomManager\SPUnitTest\obj\Debug\SPUnitTest.csproj.CopyComplete
+C:\Users\Octopus\Desktop\New folder (3)\RoomManager\SPUnitTest\obj\Debug\SPUnitTest.dll
+C:\Users\Octopus\Desktop\New folder (3)\RoomManager\SPUnitTest\obj\Debug\SPUnitTest.pdb

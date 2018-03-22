@@ -1,0 +1,17 @@
+C:\Users\Octopus\Desktop\New folder (3)\RoomManager\TestMuonPhong\bin\Debug\Microsoft.VisualStudio.TestPlatform.MSTest.TestAdapter.dll
+C:\Users\Octopus\Desktop\New folder (3)\RoomManager\TestMuonPhong\bin\Debug\Microsoft.VisualStudio.TestPlatform.MSTestAdapter.PlatformServices.Interface.dll
+C:\Users\Octopus\Desktop\New folder (3)\RoomManager\TestMuonPhong\bin\Debug\Microsoft.VisualStudio.TestPlatform.MSTestAdapter.PlatformServices.dll
+C:\Users\Octopus\Desktop\New folder (3)\RoomManager\TestMuonPhong\bin\Debug\TestMuonPhong.dll
+C:\Users\Octopus\Desktop\New folder (3)\RoomManager\TestMuonPhong\bin\Debug\TestMuonPhong.pdb
+C:\Users\Octopus\Desktop\New folder (3)\RoomManager\TestMuonPhong\bin\Debug\Microsoft.VisualStudio.TestPlatform.TestFramework.dll
+C:\Users\Octopus\Desktop\New folder (3)\RoomManager\TestMuonPhong\bin\Debug\Microsoft.VisualStudio.TestPlatform.TestFramework.Extensions.dll
+C:\Users\Octopus\Desktop\New folder (3)\RoomManager\TestMuonPhong\bin\Debug\RoomManager.exe
+C:\Users\Octopus\Desktop\New folder (3)\RoomManager\TestMuonPhong\bin\Debug\RoomManager.pdb
+C:\Users\Octopus\Desktop\New folder (3)\RoomManager\TestMuonPhong\bin\Debug\RoomManager.exe.config
+C:\Users\Octopus\Desktop\New folder (3)\RoomManager\TestMuonPhong\bin\Debug\Microsoft.VisualStudio.TestPlatform.TestFramework.xml
+C:\Users\Octopus\Desktop\New folder (3)\RoomManager\TestMuonPhong\bin\Debug\Microsoft.VisualStudio.TestPlatform.TestFramework.Extensions.xml
+C:\Users\Octopus\Desktop\New folder (3)\RoomManager\TestMuonPhong\obj\Debug\TestMuonPhong.csprojResolveAssemblyReference.cache
+C:\Users\Octopus\Desktop\New folder (3)\RoomManager\TestMuonPhong\obj\Debug\TestMuonPhong.csproj.CoreCompileInputs.cache
+C:\Users\Octopus\Desktop\New folder (3)\RoomManager\TestMuonPhong\obj\Debug\TestMuonPhong.csproj.CopyComplete
+C:\Users\Octopus\Desktop\New folder (3)\RoomManager\TestMuonPhong\obj\Debug\TestMuonPhong.dll
+C:\Users\Octopus\Desktop\New folder (3)\RoomManager\TestMuonPhong\obj\Debug\TestMuonPhong.pdb

@@ -22,6 +22,7 @@ namespace RoomManager
             public string Phong { get; set; }
             public string Lop { get; set; }
             public string Mon { get; set; }
+            public string GV { get; set; }
             public int TietBD { get; set; }
             public int TietKT { get; set; }
             public DateTime NgayMuon { get; set; }
@@ -43,6 +44,32 @@ namespace RoomManager
                     this.Phong = Phong;
                     this.Lop = Lop;
                     this.Mon = Mon;
+                    this.TietBD = TietBD;
+                    this.TietKT = TietKT;
+                    this.NgayMuon = NgayMuon;
+                    this.NguoiMuon = NguoiMuon;
+                    this.NguoiTra = NguoiTra;
+                    this.LyDo = LyDo;
+                }
+                else
+                {
+                    throw new Exception("Gặp lỗi trong việc khởi tạo đối tượng TKB");
+                }
+            }
+            public TKB(string Phong, string Lop, string Mon, string GV, int TietBD, int TietKT, DateTime NgayMuon, string NguoiMuon, string NguoiTra, string LyDo)
+            {
+                if (Phong != ""
+                    && Lop != ""
+                    && Mon != ""
+                    && TietBD > 0
+                    && TietKT > TietBD
+                    && NguoiMuon != ""
+                    && NguoiTra != "")
+                {
+                    this.Phong = Phong;
+                    this.Lop = Lop;
+                    this.Mon = Mon;
+                    this.GV = GV;
                     this.TietBD = TietBD;
                     this.TietKT = TietKT;
                     this.NgayMuon = NgayMuon;
@@ -311,29 +338,34 @@ namespace RoomManager
             cbbItem cbbL = (cbbItem)cbbLoai.SelectedItem;
             string Loai = cbbL.Value.ToString();
 
-            sql =   "SELECT P.TenPhong, " +
-                        "LH.TenLop, " +
-                        "M.TenMon, " +
-                        "TKB.TietBD, " +
-                        "TKB.TietKT, " +
-                        "TKB.Ngay, " +
-                        "MP.TenNgMuon, " +
-                        "TP.TenNgTra, " +
-                        "MP.Note " +
-                    "FROM " +
-                        "TKBieu TKB, " +
-                        "MuonPhong MP, " +
-                        "TraPhong TP, " +
-                        "Phong P, " +
-                        "LopHoc LH, " +
-                        "Mon M " +
-                    "WHERE " +
-                        "TKB.MaMP LIKE MP.MaMP " +
-                        "AND TKB.MaTP LIKE TP.MaTP " +
-                        "AND TKB.MaPhong LIKE P.MaPhong " +
-                        "AND TKB.MaLH LIKE LH.MaLH " +
-                        "AND LH.MaMon LIKE M.MaMon ";
-
+            //sql =   "SELECT P.TenPhong, " +
+            //            "LH.TenLop, " +
+            //            "M.TenMon, " +
+            //            "GV.TenGV, " +
+            //            "TKB.TietBD, " +
+            //            "TKB.TietKT, " +
+            //            "TKB.Ngay, " +
+            //            "MP.TenNgMuon, " +
+            //            "TP.TenNgTra, " +
+            //            "MP.Note " +
+            //        "FROM " +
+            //            "TKBieu TKB, " +
+            //            "MuonPhong MP, " +
+            //            "TraPhong TP, " +
+            //            "Phong P, " +
+            //            "LopHoc LH, " +
+            //            "Mon M, " +
+            //            "GiangVien GV " +
+            //        "WHERE " +
+            //            "TKB.MaMP LIKE MP.MaMP " +
+            //            "AND TKB.MaTP LIKE TP.MaTP " +
+            //            "AND TKB.MaPhong LIKE P.MaPhong " +
+            //            "AND TKB.MaLH LIKE LH.MaLH " +
+            //            "AND GV.MaGV LIKE LH.MaGV " +
+            //            "AND LH.MaMon LIKE M.MaMon ";
+            sql = "SELECT P.TenPhong, LH.TenLop,  M.TenMon,  GV.TenGV, TKB.TietBD,TKB.TietKT,TKB.Ngay,MP.TenNgMuon,TP.TenNgTra, MP.Note "
+                    +"FROM TKBieu TKB, MuonPhong MP, TraPhong TP, Phong P, LopHoc LH, Mon M, GiangVien GV "
+                    +"WHERE TKB.MaMP LIKE MP.MaMP AND TKB.MaTP LIKE TP.MaTP AND TKB.MaPhong LIKE P.MaPhong AND TKB.MaLH LIKE LH.MaLH AND GV.MaGV LIKE LH.MaGV AND LH.MaMon LIKE M.MaMon ";
             if (Loai == "MaMon")
             {
                 sql += "AND M.MaMon LIKE " + Ma;
@@ -353,20 +385,21 @@ namespace RoomManager
 
             int  TietBD, TietKT; 
             DateTime NgayMuon;
-            string NguoiMuon, NguoiTra, LyDo, Phong, Lop, Mon;
+            string NguoiMuon, NguoiTra, LyDo, Phong, Lop, Mon, GV;
 
             while (dr.Read())
             {
                 Phong = dr.GetString(0);
                 Lop = dr.GetString(1);
                 Mon = dr.GetString(2);
-                TietBD = dr.GetInt32(3);
-                TietKT = dr.GetInt32(4);
-                NgayMuon = dr.GetDateTime(5);
-                NguoiMuon = dr.GetString(6);
-                NguoiTra = dr.GetString(7);
-                LyDo = dr.GetString(8);
-                TKB tkbieu = new TKB(Phong, Lop, Mon, TietBD, TietKT, NgayMuon, NguoiMuon, NguoiTra, LyDo);
+                GV = dr.GetString(3);
+                TietBD = dr.GetInt32(4);
+                TietKT = dr.GetInt32(5);
+                NgayMuon = dr.GetDateTime(6);
+                NguoiMuon = dr.GetString(7);
+                NguoiTra = dr.GetString(8);
+                LyDo = dr.GetString(9);
+                TKB tkbieu = new TKB(Phong, Lop, Mon, GV,TietBD, TietKT, NgayMuon, NguoiMuon, NguoiTra, LyDo);
                 list.Add(tkbieu);
             }
 

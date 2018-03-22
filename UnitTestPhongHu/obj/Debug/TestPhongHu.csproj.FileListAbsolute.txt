@@ -1,0 +1,17 @@
+C:\Users\Octopus\Desktop\New folder (3)\RoomManager\UnitTestPhongHu\bin\Debug\Microsoft.VisualStudio.TestPlatform.MSTest.TestAdapter.dll
+C:\Users\Octopus\Desktop\New folder (3)\RoomManager\UnitTestPhongHu\bin\Debug\Microsoft.VisualStudio.TestPlatform.MSTestAdapter.PlatformServices.Interface.dll
+C:\Users\Octopus\Desktop\New folder (3)\RoomManager\UnitTestPhongHu\bin\Debug\Microsoft.VisualStudio.TestPlatform.MSTestAdapter.PlatformServices.dll
+C:\Users\Octopus\Desktop\New folder (3)\RoomManager\UnitTestPhongHu\bin\Debug\UnitTestPhongHu.dll
+C:\Users\Octopus\Desktop\New folder (3)\RoomManager\UnitTestPhongHu\bin\Debug\UnitTestPhongHu.pdb
+C:\Users\Octopus\Desktop\New folder (3)\RoomManager\UnitTestPhongHu\bin\Debug\Microsoft.VisualStudio.TestPlatform.TestFramework.dll
+C:\Users\Octopus\Desktop\New folder (3)\RoomManager\UnitTestPhongHu\bin\Debug\Microsoft.VisualStudio.TestPlatform.TestFramework.Extensions.dll
+C:\Users\Octopus\Desktop\New folder (3)\RoomManager\UnitTestPhongHu\bin\Debug\RoomManager.exe
+C:\Users\Octopus\Desktop\New folder (3)\RoomManager\UnitTestPhongHu\bin\Debug\RoomManager.pdb
+C:\Users\Octopus\Desktop\New folder (3)\RoomManager\UnitTestPhongHu\bin\Debug\RoomManager.exe.config
+C:\Users\Octopus\Desktop\New folder (3)\RoomManager\UnitTestPhongHu\bin\Debug\Microsoft.VisualStudio.TestPlatform.TestFramework.xml
+C:\Users\Octopus\Desktop\New folder (3)\RoomManager\UnitTestPhongHu\bin\Debug\Microsoft.VisualStudio.TestPlatform.TestFramework.Extensions.xml
+C:\Users\Octopus\Desktop\New folder (3)\RoomManager\UnitTestPhongHu\obj\Debug\TestPhongHu.csproj.CoreCompileInputs.cache
+C:\Users\Octopus\Desktop\New folder (3)\RoomManager\UnitTestPhongHu\obj\Debug\TestPhongHu.csproj.CopyComplete
+C:\Users\Octopus\Desktop\New folder (3)\RoomManager\UnitTestPhongHu\obj\Debug\UnitTestPhongHu.dll
+C:\Users\Octopus\Desktop\New folder (3)\RoomManager\UnitTestPhongHu\obj\Debug\UnitTestPhongHu.pdb
+C:\Users\Octopus\Desktop\New folder (3)\RoomManager\UnitTestPhongHu\obj\Debug\TestPhongHu.csprojResolveAssemblyReference.cache
